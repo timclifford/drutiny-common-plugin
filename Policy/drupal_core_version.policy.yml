@@ -1,0 +1,12 @@
+title: "Drupal Core Version"
+class: \Drutiny\Common\Audit\DrupalCoreVersion
+name: common:DrupalCoreVersion
+description: |
+  Checks Drupal Core version.
+success: |
+  Core version: {{version}}
+
+  {{#test}}
+    - {{ . }}
+  {{/test}}
+failure: Could not find Drupal core version.
