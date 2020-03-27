@@ -5,8 +5,4 @@ description: |
   Checks Drupal Core version.
 success: |
   Core version: {{version}}
-
-  {{#test}}
-    - {{ . }}
-  {{/test}}
 failure: Could not find Drupal core version.

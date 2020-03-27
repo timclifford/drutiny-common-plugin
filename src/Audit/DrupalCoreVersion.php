@@ -15,33 +15,20 @@ class DrupalCoreVersion extends Audit {
    */
   public function audit(Sandbox $sandbox) {
 
-     $status = $sandbox->drush(['format' => 'json'])->status();
-     $rootPath = $status['root'];
+    $status = $sandbox->drush()->status();
+    $stat = $sandbox->drush(['format' => 'json'])->status();
+    $sandbox->setParameter('status', $stat);
 
-     $test = [];
+    $command = array_values(preg_split("/[\s,]+/", $status));
 
-     // $command = "echo $rootPath";
+    $output = $sandbox->exec('echo ' . $command[4]);
 
-     $command = <<<EOT
-      stat=`{$status}`;
-      echo "test";
-      readarray -t array <<<"$(jq -r '.[]' <<<"$stat")"
-      EOT;
+    if (empty($output)) {
+     return FALSE;
+    }
 
+    $sandbox->setParameter('version', $output);
 
-     // Execute
-     $output = $sandbox->exec($command);
-
-     $version = $output;
-
-
-     if (empty($version)) {
-       return FALSE;
-     }
-
-     $sandbox->setParameter('version', $version);
-
-     return TRUE;
+    return TRUE;
   }
-
 }
