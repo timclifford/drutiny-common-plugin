@@ -1,0 +1,25 @@
+{
+  "name": "drutiny/drutiny-common-plugin",
+  "type": "library",
+  "description": "ALGM plugin for common Drutiny checks.",
+  "keywords": ["drupal", "audit", "drush", "security", "report"],
+  "authors": [
+    {"name": "Tim Clifford", "email": "tim.clifford@amazee.com"}
+  ],
+  "require": {
+    "drutiny/drutiny": "^2.3",
+    "symfony/yaml": "^3.2 || ^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Drutiny\\Plugin\\Common\\": "src/",
+      "DrutinyTests\\Plugin\\Common\\": "tests/src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phpunit/phpunit": "^5.0",
+    "squizlabs/php_codesniffer": "2.*",
+    "drupal/coder": "^8.2.0"
+  }
+}
