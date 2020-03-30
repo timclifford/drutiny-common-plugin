@@ -1,0 +1,11 @@
+title: "Drush Environment Analysis"
+class: \Drutiny\Common\Audit\DrushEnvironmentAnalysis
+name: common:DrushEnvironmentAnalysis
+description: |
+  Checks Drupal Core version.
+success: |
+  Core version: {{info.version}}
+  Bootstrap status: {{info.bootstrap_status}}
+  Theme: {{info.theme}}
+  Drush version: {{info.drush_version}}
+failure: Could not find Drupal core version.

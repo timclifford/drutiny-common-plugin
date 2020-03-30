@@ -1,7 +1,9 @@
 title: Common
 description: 'Collection of common site config checks'
 policies:
-    'common:DrupalCoreVersion': { severity: 2 }
+    'common:DrushEnvironmentAnalysis': { }
+    'common:FileSystemAnalysis': { }
+    'common:PHPAnalysis': { }
     # 'Database:Size': { severity: 2 }
     # 'fs:largeFiles': { severity: 2 }
     # 'Drupal:moduleUpdates': { severity: 2 }

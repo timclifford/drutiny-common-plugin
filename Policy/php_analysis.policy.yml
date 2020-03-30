@@ -1,0 +1,8 @@
+title: "Php Analysis"
+class: \Drutiny\Common\Audit\PHPAnalysis
+name: common:PHPAnalysis
+description: |
+  Runs an analysis on php ini.
+success: |
+  Php version: {{ setting }}
+failure: Could not find php ini data.
