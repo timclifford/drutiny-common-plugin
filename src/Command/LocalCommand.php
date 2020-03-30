@@ -34,10 +34,10 @@ class LocalCommand extends Command
       $report_filename .= '-common-audit' . date('Ymd-His') . '.html';
 
       $arguments = array(
-          // 'command' => 'profile:run',
-          '--format' => 'html',
+          'command' => 'profile:run',
+          '--format' => 'json',
           '--report-filename' => $report_filename,
-          'profile' => 'preflight',
+          'profile' => 'Common',
           'target'  => $input->getArgument('drush_alias')
       );
 
