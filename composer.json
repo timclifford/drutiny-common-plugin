@@ -1,5 +1,5 @@
 {
-  "name": "drutiny/drutiny-common-plugin",
+  "name": "AmazeeLabs/drutiny-common-plugin",
   "type": "library",
   "description": "ALGM plugin for common Drutiny checks.",
   "keywords": ["drupal", "audit", "drush", "security", "report"],
